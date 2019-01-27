@@ -34,6 +34,7 @@ public class ActivityScheduleServiceImplTest {
 
 	String properInputFilePath;
 	String invalidFilePath;
+	String lessActivitiesFilePath;
 	Stack<Activity> sampleActivityStack;
 
 	@InjectMocks
@@ -42,6 +43,7 @@ public class ActivityScheduleServiceImplTest {
 	@Before
 	public void init() {
 		MockitoAnnotations.initMocks(this);
+		lessActivitiesFilePath = loadTestFile("activities_smallno.txt");
 		properInputFilePath = loadTestFile("activities.txt");
 		invalidFilePath = loadTestFile("activitiesInvalid.txt");
 		sampleActivityStack = loadTestActivities();
@@ -128,6 +130,23 @@ public class ActivityScheduleServiceImplTest {
 				assertTrue(activities != null && activities.size() == 1
 						&& activities.get(0).getName().equals(Constants.LUNCH_BREAK)
 						&& activities.get(0).getStartTime().isBefore(Constants.LUNCH_BREAK_TIME));
+			}
+		} catch (Exception e) {
+			assertFalse(true);
+		}
+	}
+	
+	@Test
+	public void testForSmallNoOfActivitiesInInput() throws Exception {
+		try {
+			Map<String, List<Activity>> scheduleMap = activityScheduleService.scheduleActivities(lessActivitiesFilePath);
+			assertTrue(scheduleMap.size() > 0);
+			assertTrue(scheduleMap.get("Team 1").size() > 0);
+			for (Entry<String, List<Activity>> schedule : scheduleMap.entrySet()) {
+				List<Activity> activityList = schedule.getValue();
+				Activity activity = activityList.stream().max(Comparator.comparing(Activity::getStartTime)).get();
+				assertTrue(activity.getStartTime().equals(Constants.EARLY_PRESENTATION_START_TIME));
+				assertTrue(activity.getName().equals(Constants.STAFF_PRESENTATION));
 			}
 		} catch (Exception e) {
 			assertFalse(true);
