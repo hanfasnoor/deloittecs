@@ -26,23 +26,23 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
 ### If running as jar (without any input file)
     *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
     
-### From Eclipse with Input Activities file
+### Running as Spring Boot Application with Input File
     mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
     
 Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
-### From Eclipse without Activities file
+### Running as Spring Boot Application without Input File
     *mvn spring-boot:run* 
     
     
 ## Implementation Logic
     When we run the Program by passing input text file as Command Line Argument, it will read the file 
     and parse Activity Name and Duration and create Activity Object out of it and push to a Stack. 
-    All the Activities will be   stored as Stack<Activity>. 
-    It will do some validations like File exists or not and arg name is wrong or not. 
+    All the Activities will be   stored in Stack<Activity>. 
+    It will do some validations like File exists or not and arg is passed or not etc. 
     For demonstration purpose I have put a sample file in classpath and it will read from that if no args are passed. 
     It will skip the lines which are not in proper format like duration missing , 
-    name misisng etc and process remaining ones which are valid.
+    name misisng etc and process remaining lines which are valid.
     
     Program will iterate through the stack of Activities and pop one by one, 
     check for the mandatory breaks like lunch, Staff Presentation etc and create schedule for 
@@ -52,7 +52,7 @@ Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/User
     
     Each schedule is stored inside a HashMap with Team Name as key and List<Activity> as value.
     And finally it will iterate through this map and print the Schedule in the pattern.If activities are less in the 
-    input file Teams will be less and as Presentation is a single event for all Teams logic will make sure all 
+    input file, Teams will be less.As Presentation is a single event for all Teams logic will make sure all 
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
     
