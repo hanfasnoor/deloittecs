@@ -34,7 +34,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     
    *mvn clean install* on project root folder and jar will be created in /target
    
-   *cd <Path to jar>* .  
+     
    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### If running as jar (without any input file)
