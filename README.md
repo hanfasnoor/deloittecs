@@ -33,18 +33,21 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     provided as part of this Git hub Project.Also jar can be created by running maven command
     
    *mvn clean install* on project root folder and jar will be created in /target
-    
-   Eg:*java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
+   
+   *cd <Path to jar>* .  
+   *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### If running as jar (without any input file)
    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
     
 ### Running as Spring Boot Application with Input File
-    mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
+    mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> . 
     
-Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
+  cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler)   
+  *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### Running as Spring Boot Application without Input File
+   cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler) .  
    *mvn spring-boot:run* 
     
     
