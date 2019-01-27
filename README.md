@@ -191,7 +191,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    - Each schedule has Lunch break before 12 with a duration of 60 minutes.
    - Staff Presentation is scheduled no earlier than 4:00 PM and no later than 5:00 PM
    - Staff Presentation is scheduled on same time if multiple teams are there
-   - All activities are in the schedule if properly given in Input file
+   - All activities are included the schedule if properly given in Input txt file
    - Printed in the order of Team Name say Team 1, Team 2 etc
   
 
