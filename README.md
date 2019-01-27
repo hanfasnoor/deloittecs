@@ -9,9 +9,11 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    file from classPath and run the Program
 - Output is logged to console with Team Name and Schedule of Activities displayed
 
-## How to and run
+## How to run
 
-   You should have Java 8, Maven to run this application.
+   You should have Java 8, Maven to run this application.*activityListTextPath* is a commandLine arg 
+   which carries Input File Path.We can Import as Existing Maven project to Eclipse and run
+   using mvn commands.
     
 
 ### If running as jar (with Input file)
@@ -19,12 +21,12 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     activityListTextPath is a command line argument expected by the program.Jar will be  
     provided as part of this Git hub Project.Also jar can be created by running maven command
     
-    *mvn clean install* on project root folder and jar will be created in /target
+   *mvn clean install* on project root folder and jar will be created in /target
     
-    Eg: java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt
+   Eg:*java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### If running as jar (without any input file)
-    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
+   *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
     
 ### Running as Spring Boot Application with Input File
     mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
@@ -32,7 +34,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
 Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### Running as Spring Boot Application without Input File
-    *mvn spring-boot:run* 
+   *mvn spring-boot:run* 
     
     
 ## Implementation Logic
