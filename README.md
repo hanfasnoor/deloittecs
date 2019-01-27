@@ -12,7 +12,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
 ## How to run
 
    You should have Java 8, Maven to run this application.*activityListTextPath* is a commandLine arg 
-   which carries Input File Path.
+   which carries your Input File Path.
     
 ### For Opening project in Eclipse
    
@@ -25,8 +25,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    -Click Next .  
    -Click Finish
    
-   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)
-    
+   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)  
 
 ### If running as jar (with Input file)
     java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
@@ -80,6 +79,10 @@ Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/User
     -Proper Input file passed
     -End Time of Each Schedule
     -Is Lunch break available for a schedule etc
+    
+      
+  
+
     
     
     
