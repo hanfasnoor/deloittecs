@@ -83,6 +83,10 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     input file, Teams will be less.As Presentation is a single event for all Teams logic will make sure all 
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
+    
+    Used Stack as datastructure for storing activities  to remove each one using pop after scheduling.
+    Used ArrayList for storing activities in final output Map so that we can get order
+    Used LinkedHashMap for storing <Team,Activities> so that we can have insertion order and print for Team 1, Team 2 etc
    
     Main business logic for scheduling is written in
    
