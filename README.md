@@ -69,6 +69,10 @@ Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/User
     input file, Teams will be less.As Presentation is a single event for all Teams logic will make sure all 
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
+   
+   Main business logic for scheduling is written in
+   
+   [ActivityScheduleServiceImpl.java](deloittecs/deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/service/ActivityScheduleServiceImpl.java)
     
   ### Unit Test Cases
     This Project has some unit test cases written using Junit covering test cases like
