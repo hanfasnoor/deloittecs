@@ -9,14 +9,15 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    file from classPath and run the Program
 - Output is logged to console with Team Name and Schedule of Activities displayed
 
-## How to run
-     
-     You should have Java 8, Maven to run this application.
+## How to and run
+
+   You should have Java 8, Maven to run this application.
     
 
 ### If running as jar (with Input file)
-    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>    activityListTextPath is a command line argument expected by the program.Jar will be  
-    provided as part of this Git hub Project.Also jar can be create by running maven command
+    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
+    activityListTextPath is a command line argument expected by the program.Jar will be  
+    provided as part of this Git hub Project.Also jar can be created by running maven command
     
     *mvn clean install* on project root folder and jar will be created in /target
     
@@ -50,10 +51,18 @@ Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/User
     their duration.Also will schedule the lunch and Staff Presentation accordingly when time is up for those.
     
     Each schedule is stored inside a HashMap with Team Name as key and List<Activity> as value.
-    And finally will iterate through this map and print the Schedule in the pattern.If activities are less in the 
+    And finally it will iterate through this map and print the Schedule in the pattern.If activities are less in the 
     input file Teams will be less and as Presentation is a single event for all Teams logic will make sure all 
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
+    
+  ### Unit Test Cases
+    This Project has some unit test cases written using Junit covering test cases like
+    -No Input File passed
+    -Proper Input file passed
+    -End Time of Each Schedule
+    -Is Lunch break available for a schedule etc
+    
     
     
     
