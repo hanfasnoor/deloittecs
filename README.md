@@ -28,13 +28,16 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)  
 
 ### If running as jar (with Input file)
-     Jar will be provided as part of this repo [here](runnable_jar) .  
-     Run below command after downloading . 
-     java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
-     Please note **activityListTextPath** is a command line argument expected by the program.
+   Jar will be provided as part of this repo [here](runnable_jar)    
+    Run below command after downloading . 
+    
+    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath= <Your Local Input File Path>     
+    
+   Please note **activityListTextPath** is a command line argument expected by the program.
    
-    Jar can be also genrated by running command 
-    *mvn clean install* on project root folder [deloitte-activity-scheduler](deloitte-activity-scheduler) and jar will be created in /target 
+  Jar can be also genrated by running command   
+  
+  *mvn clean install* on project root folder [deloitte-activity-scheduler](deloitte-activity-scheduler) and jar will be created in /target 
    
      Then run below command in deloitte-activity-scheduler/target 
      java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path> 
