@@ -73,9 +73,9 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
    
-   Main business logic for scheduling is written in
+    Main business logic for scheduling is written in
    
-   [ActivityScheduleServiceImpl.java](deloittecs/deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/service/ActivityScheduleServiceImpl.java)
+   [ActivityScheduleServiceImpl.java](deloittecs/deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/service/)
     
   ### Unit Test Cases
     This Project has some unit test cases written using Junit covering test cases like
