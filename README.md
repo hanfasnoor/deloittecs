@@ -25,7 +25,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    -Click Next .  
    -Click Finish
    
-   This is the [Root Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)
+   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)
     
 
 ### If running as jar (with Input file)
