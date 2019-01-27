@@ -34,13 +34,14 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     
 ## Implementation Logic
     When we run the Program by passing input text file as Command Line Argument, it will read the file 
-    and parse Activity Name and Duration and create Activity Object out of it and push to a Stack.All the Activities will be   stored as Stack<Activity>. It will do some validations like File exists or not and arg name is wrong or not. 
+    and parse Activity Name and Duration and create Activity Object out of it and push to a Stack. 
+    All the Activities will be   stored as Stack<Activity>. It will do some validations like File exists or not and arg name is wrong or not. 
     For demonstration purpose I have put a sample file in classpath and it will read from that if no input file found. 
     It will skip the lines which are not in proper format like duration missing , name misisng etc and process remaining ones which are valid.
     
-    Program will iterate through the stack of Activities and pop one by one. 
-    Check for the mandatory breaks like lunch, Staff Presentation etc and create schedule for 
-    each activity without any break in between.As we dont have 
+    Program will iterate through the stack of Activities and pop one by one, 
+    check for the mandatory breaks like lunch, Staff Presentation etc and create schedule for 
+    each activity without any gap in between.As we dont have 
     no of teams and employees as Input, Teams will be dynamically created based on no of activities and  
     their duration.Also will schedule the lunch and Staff Presentation accordingly when time is up for those.
     
