@@ -185,12 +185,13 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
       16:25 : Staff Motivation Presentation 60min
       
    From the above results its evident 
-   - We are scheduling the activities to teams.
+   - We are scheduling the activities for various teams.
+   - Alla ctivities start at 9:00 and end before Presentation start time(4:00 PM or 5:00 PM)
    - There is no gap between each activity
    - Each schedule has Lunch break before 12 with a duration of 60 minutes.
-   - Staff Presentation is scheduled no earlier than 4.00 PM and no later than 5.00 PM
+   - Staff Presentation is scheduled no earlier than 4:00 PM and no later than 5:00 PM
    - Staff Presentation is scheduled on same time if multiple teams are there
-   - All activities are scheduled if properly given in Input
+   - All activities are in the schedule if properly given in Input file
    - Printed in the order of Team Name say Team 1, Team 2 etc
   
 
