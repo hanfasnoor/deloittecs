@@ -12,8 +12,10 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
 ## How to run
 
    You should have Java 8, Maven to run this application.*activityListTextPath* is a commandLine arg 
-   which carries Input File Path.We can Import as Existing Maven project to Eclipse and run
-   using mvn commands.[Root Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)
+   which carries Input File Path.We can Import as Existing Maven project to Eclipse and run  
+   using mvn commands.Right click and *Run As Java Application* on this file [Root Application](deloitte-activity- 
+   scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)
+   by passing Run Arguments
     
 
 ### If running as jar (with Input file)
