@@ -106,7 +106,7 @@ public class ActivityScheduleServiceImpl implements ActivityScheduleService {
 					break;
 				}
 			}
-			System.out.println("Map size " + teamActivityMap.size());
+			logger.info("Team size " + teamActivityMap.size());
 		}
 
 		printScheduleToConsole(teamActivityMap);
