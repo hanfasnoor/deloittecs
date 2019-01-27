@@ -18,28 +18,30 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>    activityListTextPath is a command line argument expected by the program.Jar will be  
     provided as part of this Git hub Project.Also jar can be create by running maven command
     
-    mvn clean install on project root folder and jar will be created in /target
+    *mvn clean install* on project root folder and jar will be created in /target
     
     Eg: java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt
     
 ### If running as jar (without any input file)
-    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar
+    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
     
 ### From Eclipse with Input Activities file
     mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
     
-    Eg:mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt
+Eg:*mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### From Eclipse without Activities file
-    mvn spring-boot:run  
+    *mvn spring-boot:run* 
     
     
 ## Implementation Logic
     When we run the Program by passing input text file as Command Line Argument, it will read the file 
     and parse Activity Name and Duration and create Activity Object out of it and push to a Stack. 
-    All the Activities will be   stored as Stack<Activity>. It will do some validations like File exists or not and arg name is wrong or not. 
+    All the Activities will be   stored as Stack<Activity>. 
+    It will do some validations like File exists or not and arg name is wrong or not. 
     For demonstration purpose I have put a sample file in classpath and it will read from that if no args are passed. 
-    It will skip the lines which are not in proper format like duration missing , name misisng etc and process remaining ones which are valid.
+    It will skip the lines which are not in proper format like duration missing , 
+    name misisng etc and process remaining ones which are valid.
     
     Program will iterate through the stack of Activities and pop one by one, 
     check for the mandatory breaks like lunch, Staff Presentation etc and create schedule for 
