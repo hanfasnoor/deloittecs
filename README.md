@@ -15,17 +15,18 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    which carries your Input File Path.
     
 ### For Opening project in Eclipse
+    
+   - Download or clone the project 
+   - Open eclipse.  
+   - Click File > Import  
+   - Type Maven in the search box under Select an import source:  
+   - Select Existing Maven Projects  
+   - Click Next   
+   - Click Browse and select the [folder](deloitte-activity-scheduler) that is the root of the Maven project .
+   - Click Next   
+   - Click Finish
    
-   -Open eclipse.  
-   -Click File > Import.  
-   -Type Maven in the search box under Select an import source:  
-   -Select Existing Maven Projects.  
-   -Click Next.  
-   -Click Browse and select the [folder](deloitte-activity-scheduler) that is the root of the Maven project .
-   -Click Next .  
-   -Click Finish
-   
-   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)  
+   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java) java file  
 
 ### If running as jar (with Input file)
    Jar will be provided as part of this repo [here](runnable_jar)    
