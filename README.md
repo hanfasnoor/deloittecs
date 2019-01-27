@@ -33,7 +33,7 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
      java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
      Please note **activityListTextPath** is a command line argument expected by the program.
    
-   Jar can be also genrated by running below command . 
+    Jar can be also genrated by running command 
     *mvn clean install* on project root folder [deloitte-activity-scheduler](deloitte-activity-scheduler) and jar will be created in /target 
    
      Then run below command in deloitte-activity-scheduler/target 
