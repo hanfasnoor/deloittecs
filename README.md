@@ -31,11 +31,11 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
     activityListTextPath is a command line argument expected by the program.
   Jar will be provided as part of this Git hub Project [here](deloittecs/runnable_jar/deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar)  
-   Also jar can be genrated by running below command
+   Jar can be also genrated by running below command
     
-   *mvn clean install* on project root folder and jar will be created in /target
+   *mvn clean install* on project root folder [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler) and jar will be created in /target
    
-   After genrating the jar run below command . 
+   Then run below command in deloitte-activity-scheduler/target
    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### If running as jar (without any input file)
@@ -45,11 +45,11 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> . 
     
   cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler)   
-  *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
+ Eg  *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### Running as Spring Boot Application without Input File
    cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler) .  
-   *mvn spring-boot:run* 
+ Eg    *mvn spring-boot:run* 
     
     
 ## Implementation Logic
