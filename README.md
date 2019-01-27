@@ -86,8 +86,91 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     -Proper Input file passed
     -End Time of Each Schedule
     -Is Lunch break available for a schedule etc
-    
+
+### Some Test Evidences
+ ###### Input 1
+      Duck Herding 60min
+      Archery 45min
+      Learning Magic Tricks 40min
+      Laser Clay Shooting 60min
+      Human Table Football 30min
+      Buggy Driving 30min
+      Salsa & Pickles sprint
+      2-wheeled Segways 45min
+      Viking Axe Throwing 60min
+      Giant Puzzle Dinosaurs 30min
+      Giant Digital Graffiti 60min
+      Cricket 2020 60min
+      Wine Tasting sprint
+      Arduino Bonanza 30min
+      Digital Tresure Hunt 60min
+      Enigma Challenge 45min
+      Monti Carlo or Bust 60min
+      New Zealand Haka 30min
+      Time Tracker sprint
+      Indiano Drizzle 45min
       
+      mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt
+      
+ ###### Output 1
+ 
+       Team 1
+      -------------------------
+      09:00 : Indiano Drizzle 45min
+      09:45 : Time Tracker 15min
+      10:00 : New Zealand Haka 30min
+      10:30 : Monti Carlo or Bust 60min
+      11:30 : Lunch Break 60min
+      12:30 : Enigma Challenge 45min
+      13:15 : Digital Tresure Hunt 60min
+      14:15 : Arduino Bonanza 30min
+      14:45 : Wine Tasting 15min
+      15:00 : Cricket 2020 60min
+      16:00 : Giant Digital Graffiti 60min
+      17:00 : Staff Motivation Presentation 60min
+
+      Team 2
+      -------------------------
+      09:00 : Giant Puzzle Dinosaurs 30min
+      09:30 : Viking Axe Throwing 60min
+      10:30 : 2-wheeled Segways 45min
+      11:15 : Salsa & Pickles 15min
+      11:30 : Lunch Break 60min
+      12:30 : Buggy Driving 30min
+      13:00 : Human Table Football 30min
+      13:30 : Laser Clay Shooting 60min
+      14:30 : Learning Magic Tricks 40min
+      15:10 : Archery 45min
+      15:55 : Duck Herding 60min
+      17:00 : Staff Motivation Presentation 60min
+ 
+###### Input 2
+      Duck Herding 60min
+      Archery 45min
+      Learning Magic Tricks 40min
+      Laser Clay Shooting 60min
+      Human Table Football 30min
+      Buggy Driving 30min
+      Salsa & Pickles sprint
+      2-wheeled Segways 45min
+      Viking Axe Throwing 60min
+      
+      mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities2.txt
+      
+###### Output 2
+      Team 1
+      -------------------------
+      09:00 : Viking Axe Throwing 60min
+      10:00 : 2-wheeled Segways 45min
+      10:45 : Salsa & Pickles 15min
+      11:00 : Buggy Driving 30min
+      11:30 : Lunch Break 60min
+      12:30 : Human Table Football 30min
+      13:00 : Laser Clay Shooting 60min
+      14:00 : Learning Magic Tricks 40min
+      14:40 : Archery 45min
+      15:25 : Duck Herding 60min
+      16:25 : Staff Motivation Presentation 60min
   
 
     
