@@ -51,14 +51,16 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
 ### Running as Spring Boot Application with Input File
     mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
     
-  For Eg: cd [deloitte-activity-scheduler](deloitte-activity-scheduler)   
-   *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
+  For Eg: cd [deloitte-activity-scheduler](deloitte-activity-scheduler)
+   - *mvn clean install*
+   - *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### Running as Spring Boot Application without Input File
      mvn spring-boot:run
    
- For Eg:  cd [deloitte-activity-scheduler](deloitte-activity-scheduler) .  
-     *mvn spring-boot:run* 
+ For Eg:  cd [deloitte-activity-scheduler](deloitte-activity-scheduler) .
+   - *mvn clean install* 
+   - *mvn spring-boot:run* 
     
     
 ## Implementation Logic
