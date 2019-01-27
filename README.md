@@ -31,7 +31,9 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    Jar will be provided as part of this repo [here](runnable_jar)    
     Run below command after downloading . 
     
-    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath= <Your Local Input File Path>     
+    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath= <Your Local Input File Path>  
+    
+    Eg: java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt
     
    Please note **activityListTextPath** is a command line argument expected by the program.
    
