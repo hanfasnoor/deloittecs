@@ -15,40 +15,52 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
    which carries your Input File Path.
     
 ### For Opening project in Eclipse
+    
+   - Download or clone the project 
+   - Open eclipse.  
+   - Click File > Import  
+   - Type Maven in the search box under Select an import source:  
+   - Select Existing Maven Projects  
+   - Click Next   
+   - Click Browse and select the [folder](deloitte-activity-scheduler) that is the root of the Maven project .
+   - Click Next   
+   - Click Finish
    
-   -Open eclipse.  
-   -Click File > Import.  
-   -Type Maven in the search box under Select an import source:  
-   -Select Existing Maven Projects.  
-   -Click Next.  
-   -Click Browse and select the [folder](deloitte-activity-scheduler) that is the root of the Maven project .
-   -Click Next .  
-   -Click Finish
-   
-   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java)  
+   This is the [Root Springboot Application](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/DeloitteActivitySchedulerApplication.java) java file  
 
 ### If running as jar (with Input file)
-    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path>     
-    activityListTextPath is a command line argument expected by the program.Jar will be  
-    provided as part of this Git hub Project.Also jar can be created by running maven command
+   Jar will be provided as part of this repo [here](runnable_jar)    
+    Run below command after downloading . 
     
-   *mvn clean install* on project root folder and jar will be created in /target
+    java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath= <Your Local Input File Path>  
+    
+    Eg: java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt
+    
+   Please note **activityListTextPath** is a command line argument expected by the program.
    
-     
-   *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=/Users/admin/Desktop/activities.txt*
+  Jar can be also genrated by running command   
+  
+  *mvn clean install* on project root folder [deloitte-activity-scheduler](deloitte-activity-scheduler) and jar will be created in /target 
+   
+     Then run below command in deloitte-activity-scheduler/target 
+     java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar --activityListTextPath=<Your Local Input File Path> 
     
 ### If running as jar (without any input file)
    *java -jar deloitte-activity-scheduler-0.0.1-SNAPSHOT.jar*
     
 ### Running as Spring Boot Application with Input File
-    mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> . 
+    mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=<Your Local Input File Path> 
     
-  cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler)   
-  *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
+  For Eg: cd [deloitte-activity-scheduler](deloitte-activity-scheduler)
+   - *mvn clean install*
+   - *mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt*
     
 ### Running as Spring Boot Application without Input File
-   cd [deloitte-activity-scheduler](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler) .  
-   *mvn spring-boot:run* 
+     mvn spring-boot:run
+   
+ For Eg:  cd [deloitte-activity-scheduler](deloitte-activity-scheduler) .
+   - *mvn clean install* 
+   - *mvn spring-boot:run* 
     
     
 ## Implementation Logic
@@ -71,19 +83,116 @@ This is a standalone Java Application built using Spring boot 2.1.2, Java 8 , Ma
     input file, Teams will be less.As Presentation is a single event for all Teams logic will make sure all 
     are attending it at the same time.Also we have logic for early start time of Presentation as 4 and late 
     start time as 5.
+    
+    Used Stack as datastructure for storing activities  to remove each one using pop after scheduling.
+    Used ArrayList for storing activities in final output Map so that we can get order
+    Used LinkedHashMap for storing <Team,Activities> so that we can have insertion order and print for Team 1, Team 2 etc
    
-   Main business logic for scheduling is written in
+    Main business logic for scheduling is written in
    
-   [ActivityScheduleServiceImpl.java](deloittecs/deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/service/ActivityScheduleServiceImpl.java)
+   [ActivityScheduleServiceImpl.java](deloitte-activity-scheduler/src/main/java/com/deloitte/events/deloitteactivityscheduler/service/)
     
   ### Unit Test Cases
-    This Project has some unit test cases written using Junit covering test cases like
-    -No Input File passed
-    -Proper Input file passed
-    -End Time of Each Schedule
-    -Is Lunch break available for a schedule etc
-    
+   This Project has some unit test cases written using Junit covering test cases like
+   - No Input File passed
+   - Proper Input file passed
+   - End Time of Each Schedule
+   - Is Lunch break available for a schedule etc
+
+### Some Test Evidences
+ ###### Input 1
+      Duck Herding 60min
+      Archery 45min
+      Learning Magic Tricks 40min
+      Laser Clay Shooting 60min
+      Human Table Football 30min
+      Buggy Driving 30min
+      Salsa & Pickles sprint
+      2-wheeled Segways 45min
+      Viking Axe Throwing 60min
+      Giant Puzzle Dinosaurs 30min
+      Giant Digital Graffiti 60min
+      Cricket 2020 60min
+      Wine Tasting sprint
+      Arduino Bonanza 30min
+      Digital Tresure Hunt 60min
+      Enigma Challenge 45min
+      Monti Carlo or Bust 60min
+      New Zealand Haka 30min
+      Time Tracker sprint
+      Indiano Drizzle 45min
       
+      mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities.txt
+      
+ ###### Output 1
+ 
+       Team 1
+      -------------------------
+      09:00 : Indiano Drizzle 45min
+      09:45 : Time Tracker 15min
+      10:00 : New Zealand Haka 30min
+      10:30 : Monti Carlo or Bust 60min
+      11:30 : Lunch Break 60min
+      12:30 : Enigma Challenge 45min
+      13:15 : Digital Tresure Hunt 60min
+      14:15 : Arduino Bonanza 30min
+      14:45 : Wine Tasting 15min
+      15:00 : Cricket 2020 60min
+      16:00 : Giant Digital Graffiti 60min
+      17:00 : Staff Motivation Presentation 60min
+
+      Team 2
+      -------------------------
+      09:00 : Giant Puzzle Dinosaurs 30min
+      09:30 : Viking Axe Throwing 60min
+      10:30 : 2-wheeled Segways 45min
+      11:15 : Salsa & Pickles 15min
+      11:30 : Lunch Break 60min
+      12:30 : Buggy Driving 30min
+      13:00 : Human Table Football 30min
+      13:30 : Laser Clay Shooting 60min
+      14:30 : Learning Magic Tricks 40min
+      15:10 : Archery 45min
+      15:55 : Duck Herding 60min
+      17:00 : Staff Motivation Presentation 60min
+ 
+###### Input 2
+      Duck Herding 60min
+      Archery 45min
+      Learning Magic Tricks 40min
+      Laser Clay Shooting 60min
+      Human Table Football 30min
+      Buggy Driving 30min
+      Salsa & Pickles sprint
+      2-wheeled Segways 45min
+      Viking Axe Throwing 60min
+      
+      mvn spring-boot:run -Dspring-boot.run.arguments=--activityListTextPath=/Users/admin/Desktop/activities2.txt
+      
+###### Output 2
+      Team 1
+      -------------------------
+      09:00 : Viking Axe Throwing 60min
+      10:00 : 2-wheeled Segways 45min
+      10:45 : Salsa & Pickles 15min
+      11:00 : Buggy Driving 30min
+      11:30 : Lunch Break 60min
+      12:30 : Human Table Football 30min
+      13:00 : Laser Clay Shooting 60min
+      14:00 : Learning Magic Tricks 40min
+      14:40 : Archery 45min
+      15:25 : Duck Herding 60min
+      16:25 : Staff Motivation Presentation 60min
+      
+   From the above results its evident 
+   - We are scheduling the activities for various teams.
+   - Alla ctivities start at 9:00 and end before Presentation start time(4:00 PM or 5:00 PM)
+   - There is no gap between each activity
+   - Each schedule has Lunch break before 12 with a duration of 60 minutes.
+   - Staff Presentation is scheduled no earlier than 4:00 PM and no later than 5:00 PM
+   - Staff Presentation is scheduled on same time if multiple teams are there
+   - All activities are included the schedule if properly given in Input txt file
+   - Printed in the order of Team Name say Team 1, Team 2 etc
   
 
     
